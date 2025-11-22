@@ -63,15 +63,12 @@ jobs:
             vulkan:p
             vulkan-headers:p
             
-      - name: Install python protobuf, aqtinstall, and zip
+      - name: Install python protobuf and zip
         run: |
-          pip install protobuf aqtinstall
+          pip install protobuf
           pacman -S git make unzip zip --noconfirm
 
-      - name: Install qt
-        run: |
-          aqt install-qt -O "${QT_PATH}" windows desktop "${QT_VERSION}" win64_mingw -m qtpositioning qtwebchannel qtwebsockets qtserialport
-
+      
       - name: Build libbplacebo
         run: |
           scripts/build-libplacebo-windows.sh
