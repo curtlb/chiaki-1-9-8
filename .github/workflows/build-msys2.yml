@@ -27,6 +27,7 @@ jobs:
           fetch-depth: 0
 
       - name: Initialize and update submodules
+        shell: pwsh
         run: |
           git submodule update --init --recursive
 
